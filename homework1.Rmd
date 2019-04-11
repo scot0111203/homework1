@@ -3,8 +3,8 @@ title: "homework 1"
 date: "2019-04-01"
 output: html_document
 params:
-  studentID: "你的學號"
-  studentName: "你的名字"
+  studentID: "410773066"
+  studentName: "許奕賢"
 ---
 
 # 注意事項
@@ -49,7 +49,7 @@ grade <- c(50,60,92,88)
 ### 1.1
 創造一個名為fromEcon的logical class物件，每個元素對應major物件中相同位置元素其值是否為"經濟系"的邏輯判斷——TRUE表示來自經濟系。（答案物件fromEcon）
 ```{r ans11}
-fromEcon <- (major == "經濟系")
+fromEcon == c("經濟系")
 fromEcon
 ```
 
@@ -63,7 +63,12 @@ sumEcon
 ### 1.3
 善用logical class遇到數學計算會形成1與0的數值之特質，計算經濟系學生在該科的平均成績（即經濟系學生在該科成績加總除以經濟系學生數），存成答案物件meanEcon。
 ```{r ans13}
-
+as.integer(fromEcon) -> grade1
+grade1
+grade2 <- grade1*grade
+grade2
+sum(grade2)/sumEcon ->meanEcon
+meanEcon
 ```
  
 ## 2
@@ -115,12 +120,18 @@ studentID, schoolYear, grade, credit的每一個元素位置其值分別代表�
 對每一科，只有及格才表示有拿到學分，請創造一個integer class物件名為earnedCredit, 其值為0若沒拿到該科學分，其值為對應credit位置的學分數若有拿到該科學分。
 （舉例： 若credit為c(2,3,2), 而對應grade為c(55,70,88), 則earnedCredit為c(0,3,2)）此題答案物件為earnedCredit （注意class也要對）
 ```{r ans31}
-+
+grade >=60 
 ```
 
 ### 3.2
 請問學號為046S6f645的學生在100學年修習了多少學分? 答案請存在答案物件credit100ChosenStudent。
 ```{r ans32}
+head(studentID)
+head(schoolYear)
+str_sub(schoolYear , "100") 
+str_subset(studentID , "046S6f645")
+
+
 ```
 
 ### 3.3
